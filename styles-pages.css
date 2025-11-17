@@ -1,0 +1,252 @@
+.documents-body {
+	padding-top: 35px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+
+.documents-body a {
+	font-size: 1.2rem;
+	text-decoration: none;
+}
+
+
+.documents-body a:hover {
+	color: #d9534f;
+	font-size: 1.25rem;
+}
+
+
+
+
+.info-body {
+	padding-top: 35px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+
+.info-body P {
+	font-size: 1.2rem;
+	color: black;
+	margin: 5px;
+}
+
+
+.info-body button {
+  cursor: pointer;
+  padding: 2px 4px;
+  border: none;
+  background: #e0e0e0;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.info-body button:hover {
+  background: #f4aaaa;
+}
+
+
+#officePackageTitle {
+  user-select: none;
+  display: inline-block;
+}
+
+#officePackageContent {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+.tooltip {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  position: absolute;
+  transform: translateY(0px);
+  transform: translateX(5px);
+  animation: fadeOut 1s forwards;
+  white-space: nowrap;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+.extentions-body {
+	padding-top: 35px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.extentions-body h2 {
+	margin-bottom:10px;
+}
+
+#last-update-on {
+	font-family: 'Times New Roman', Times, serif;
+	margin-left: 5px;
+	font-size: .8rem;
+	font-weight: normal;
+}
+
+.phone-tables{
+	display: flex;
+	/*height: 1500PX;
+	flex-direction: column;*/
+	flex-wrap: wrap;
+	gap: 40px;
+	/*justify-content: center;*/
+}
+
+.phone-table{
+	  border-collapse: collapse;
+	  margin-bottom: 25px;
+	  width: 31%;
+	  height: 100%;
+	  background-color: white;
+}
+
+
+.phone-table th, .phone-table td {
+	padding: 8px 12px;
+	text-align: left;
+	width: auto;
+	border: 1px solid #ccc;
+}
+
+
+.table-head {
+	background-color: black;
+	color: white;
+}
+
+
+
+.phone-tables-new {
+	display: flex;
+	height: 2500px;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+.phone-table-new {
+	  border-collapse: collapse;
+	  width: 31%;
+	  background-color: white;
+}
+
+
+.phone-table-new th, .phone-table-new td {
+	padding: 8px 12px;
+	text-align: left;
+	width: auto;
+	border: 1px solid #ccc;
+}
+
+
+.table-head {
+	background-color: black;
+	color: white;
+}
+
+
+
+
+
+.search-container input[type=text] {
+  padding: 6px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-size: 17px;
+  border: none;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.search-container button {
+  padding: 6px 10px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  background: #ccc;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.search-container button:hover {
+  background: #aaa;
+}
+
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+
+
+
+
+
+
+
+.tutorials-body {
+	margin-top: 25px;
+	padding-left: 25px;
+	padding-right: 25px;
+	display: flex;
+	flex-direction: column;
+}
+
+.tute-cards {
+	width: 100%;
+	height: auto;
+	display: flex;
+	margin-bottom: 17px;
+	margin-top: 17px;
+}
+
+.tute-cards-image {
+	width: 30%;
+}
+
+.tute-cards-image img {
+	width: 100%;
+}
+
+.tute-cards-tile {
+	width: 70%;
+	padding-left: 25px;
+	font-size: 1.20rem;
+}
+
+.tute-cards-tile a:hover {
+	color: #d9534f;
+	font-size: 1.25rem;
+}
+
+
+
+
+.mobiles-body{
+	padding-top: 35px;
+	padding-left: 25px;
+	padding-right: 25px;
+}

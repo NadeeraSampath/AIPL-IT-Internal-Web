@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AIPL Mobile Numbers</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-pages.css" />
+  <link rel="stylesheet" href="styles-popups.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <script defer src="script-pages.js"></script>
+  <script defer src="script-popups.js"></script>
+
+	<style>
+		body { font-family: Arial, sans-serif;}
+		h2 { text-align:center; margin-bottom:14px; }
+		.search-container { text-align:center;}
+		#status { text-align:center; margin-bottom:10px; color:#333; }
+		table { width:100%; margin: 0 auto; margin-bottom: 40px; border-collapse:collapse; box-shadow:0 2px 6px rgba(0,0,0,0.08); background:#fff; }
+		th,td { padding:10px 12px; border:1px solid #e3e6e8; text-align:left; }
+		th { background:#0078d7; color:#fff; font-weight:700; }
+		tr:nth-child(even){ background:#fbfcfd; }
+		pre#debug { width:90%; margin:10px auto; padding:10px; background:#fff; border:1px solid #eee; max-height:220px; overflow:auto; display:none; }
+	</style>	
+
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="logo"><a href="index.html">
+      <img src="Photos\logo.png" alt="Logo" /></a>
+    </div>
+    <div class="title">IT Division - Analytical Instruments (Pvt) Ltd</div>
+    <div class="home-icon">
+      <a href="index.html">
+		<i class="fas fa-home"></i> HOME
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <aside class="icon-panel">
+      <div class="icon-item">
+		<a href="printers.html">
+			<img src="Photos\printers.png" alt="Printers" />
+			<p>Network Printers</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="mobiles.html">
+			<img src="Photos\mobille.png" alt="Extentions" />
+			<p>Mobile Numbers</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="extentions.html">
+			<img src="Photos\extentions.png" alt="Extentions" />
+			<p>Phone Extentions</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="Res/request_projector.docx" download>
+			<img src="Photos\projector.png" alt="Projector" />
+			<p>Request Projector</p>
+		</a>
+      </div>
+    <div class="icon-item">
+		<a href="http://192.168.001.001:0001" target="_blank">
+			<img src="Photos\horion-ipp.png" alt="Horion-IPP" />
+			<p>TV - Board Meeting Room</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="tutorials.html">
+			<img src="Photos\tutorials.png" alt="Tutorials" />
+			<p>How To Do</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="documents.html">
+			<img src="Photos\documents.png" alt="Documents" />
+			<p>Documents</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="information.html">
+			<img src="Photos\information.png" alt="Information" />
+			<p>Information</p>
+		</a>
+      </div>	  
+    </aside>
+
+    <section class="content">
+      
+	<div class="mobiles-body">
+
+		<h2>Employee Mobile Numbers</h2>
+		<div id="status">Waiting to load...</div>
+
+		<div class="search-container">
+			<input type="text" id="searchInput" placeholder="Search..." />
+			<button onclick="searchName()"><i class="fa fa-search"></i>&nbsp;Search</button><a href="#" id="SubmitionLink" onclick="openForm()">Request for making changes.</a>
+		</div>
+
+		<!-- Overlay and Popup -->
+		<div class="overlay" id="overlay" onclick="closeForm()"></div>
+
+		<div class="popup" id="feedbackPopup">
+		<h2>Request for making changes</h2><br>
+		<form id="feedbackForm" onsubmit="event.preventDefault();">
+			<label>Mobile number</label>
+			<input type="tel" placeholder="Mobile number (Ex: 0779876543)" name="phone" pattern="[0-9]{7,10}" maxlength="10" required>
+
+			<label>Correct name</label>
+			<input type="text" name="name" placeholder="Name should be..." required>
+
+			<label>Correct department / Comments</label>
+			<textarea name="feedback" placeholder="Write here any other feedbacks... "rows="4"></textarea> 
+			<br><br>
+
+			<div style="text-align:center;">
+			<button type="button" class="close-btn" onclick="closeForm()">Close</button>
+			<button type="submit" class="submit-btn" onclick="submitFeedback()">Submit</button>
+			</div>
+		</form>
+		</div>	
+		
+		<!-- 🔹 Popup Message Container -->
+		<div class="popup" id="statusPopup">
+			<h2 id="popupTitle">Success!</h2>
+			<p id="popupMsg">Thank you! Your request has been submitted successfully.</p>
+			<button onclick="closeStatusPopup()">OK</button>
+		</div>
+
+
+		<table id="employeeTable"><thead></thead><tbody></tbody></table>
+		<pre id="debug"></pre>		   
+			
+		<script>
+		// <-- Put your direct download link here (the one you provided)
+		const csvUrl = "Res/mobile_numbers.csv";
+
+		// add timestamp to avoid cache
+		const csvFetchUrl = csvUrl + (csvUrl.includes('?') ? '&_=' + Date.now() : '?_=' + Date.now());
+
+		const statusEl = document.getElementById('status');
+		const debugEl = document.getElementById('debug');
+
+		async function loadCsv() {
+			statusEl.textContent = 'Loading CSV...';
+			try {
+			// Try fetching the CSV (will fail with CORS/401 if SharePoint blocks it)
+			const resp = await fetch(csvFetchUrl, { credentials: 'include' });
+			if (!resp.ok) throw new Error('HTTP '+resp.status+' - ' + resp.statusText);
+
+			const text = await resp.text();
+			// Parse CSV text (header row expected)
+			const results = Papa.parse(text, { header: true, skipEmptyLines: true });
+			console.log('Papa.parse results:', results);
+
+			if (results.errors && results.errors.length) {
+				console.warn('Parse errors:', results.errors);
+			}
+
+			const data = results.data || [];
+			if (data.length === 0) {
+				statusEl.textContent = 'CSV loaded but no data rows were found.';
+				debugEl.style.display = 'block';
+				debugEl.textContent = 'First 1000 chars of file:\n\n' + text.slice(0,1000);
+				return;
+			}
+
+			// Normalize header names (remove BOM, trim)
+			let headers = (results.meta && results.meta.fields) ? 
+							results.meta.fields.map(h => h.replace(/^\uFEFF/, '').trim()) :
+							Object.keys(data[0]).map(h => h.replace(/^\uFEFF/, '').trim());
+
+			// Build table header
+			const thead = document.querySelector('#employeeTable thead');
+			thead.innerHTML = '';
+			const trh = document.createElement('tr');
+			headers.forEach(h => { const th = document.createElement('th'); th.textContent = h || '(empty)'; trh.appendChild(th); });
+			thead.appendChild(trh);
+
+			// Build rows
+			const tbody = document.querySelector('#employeeTable tbody');
+			tbody.innerHTML = '';
+			let shown = 0;
+			data.forEach(rawRow => {
+				// create normalized row object where keys are normalized header names
+				const row = {};
+				for (const origKey in rawRow) {
+				const normKey = origKey.replace(/^\uFEFF/, '').trim();
+				row[normKey] = rawRow[origKey];
+				}
+				// skip fully empty rows
+				const allEmpty = headers.every(h => !row[h] || String(row[h]).trim() === '');
+				if (allEmpty) return;
+				const tr = document.createElement('tr');
+				headers.forEach(h => {
+				const cell = document.createElement('td');
+				cell.innerHTML = row[h] ?? '';
+				tr.appendChild(cell);
+				});
+				tbody.appendChild(tr);
+				shown++;
+			});
+
+			statusEl.textContent = `Loaded ${shown} row(s).`;
+			} catch (err) {
+			console.error(err);
+			// show friendly message and ask user to check console for details
+			statusEl.innerHTML = 'Error loading CSV: ' + (err.message || err) + '<br><small>Open browser console (F12) to see details (CORS / 401 / network).</small>';
+			debugEl.style.display = 'block';
+			debugEl.textContent = String(err.stack || err);
+			}
+		}
+
+		loadCsv();
+		</script>	
+
+	</div>
+	 
+    </section>
+	
+  </main>
+  
+  
+  <footer>
+    &copy; Nadeera Sampath Wijekoon 2025
+  </footer>
+  
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

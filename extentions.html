@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AIPL Extentions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-pages.css" />
+  <link rel="stylesheet" href="styles-popups.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script defer src="script-pages.js"></script>
+  <script defer src="script-popups.js"></script>
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="logo"><a href="index.html">
+      <img src="Photos\logo.png" alt="Logo" /></a>
+    </div>
+    <div class="title">IT Division - Analytical Instruments (Pvt) Ltd</div>
+    <div class="home-icon">
+      <a href="index.html">
+		<i class="fas fa-home"></i> HOME
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <aside class="icon-panel">
+      <div class="icon-item">
+		<a href="printers.html">
+			<img src="Photos\printers.png" alt="Printers" />
+			<p>Network Printers</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="mobiles.html">
+			<img src="Photos\mobille.png" alt="Extentions" />
+			<p>Mobile Numbers</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="extentions.html">
+			<img src="Photos\extentions.png" alt="Extentions" />
+			<p>Phone Extentions</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="Res/request_projector.docx" download>
+			<img src="Photos\projector.png" alt="Projector" />
+			<p>Request Projector</p>
+		</a>
+      </div>
+    <div class="icon-item">
+		<a href="http://192.168.001.001:0001" target="_blank">
+			<img src="Photos\horion-ipp.png" alt="Horion-IPP" />
+			<p>TV - Board Meeting Room</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="tutorials.html">
+			<img src="Photos\tutorials.png" alt="Tutorials" />
+			<p>How To Do</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="documents.html">
+			<img src="Photos\documents.png" alt="Documents" />
+			<p>Documents</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="information.html">
+			<img src="Photos\information.png" alt="Information" />
+			<p>Information</p>
+		</a>
+      </div>	  
+    </aside>
+
+    <section class="content">
+      
+	<div class="extentions-body">
+	<h2>Internal LAN Phone Numbers<i id="last-update-on" style="font-size: 0.8rem;"> *Last update: July 2025</i></h2>
+	<div class="search-container">
+		<input type="text" id="searchInput" placeholder="Search..." />
+		<button onclick="searchName()"><i class="fa fa-search"></i>&nbsp;Search</button><a href="#" id="SubmitionLink" onclick="openForm()">Request for making changes.</a>
+	</div>
+
+		<!-- Overlay and Popup -->
+		<div class="overlay" id="overlay" onclick="closeForm()"></div>
+
+		<div class="popup" id="feedbackPopup">
+		<h2>Request for making changes</h2><br>
+		<form id="feedbackForm" onsubmit="event.preventDefault();">
+			<label>Extention number</label>
+			<input type="tel" placeholder="Extention number" name="phone" pattern="[0-9]{3}" maxlength="3" required>
+
+			<label>Correct name</label>
+			<input type="text" name="name" placeholder="Name should be..." required>
+
+			<label>Correct department / Comments</label>
+			<textarea name="feedback" placeholder="Write here any other feedbacks... "rows="4"></textarea> 
+			<br><br>
+
+			<div style="text-align:center;">
+			<button type="button" class="close-btn" onclick="closeForm()">Close</button>
+			<button type="submit" class="submit-btn" onclick="submitFeedbackForExtentions()">Submit</button>
+			</div>
+		</form>
+		</div>	
+		
+		<!-- 🔹 Popup Message Container -->
+		<div class="popup" id="statusPopup">
+			<h2 id="popupTitle">Success!</h2>
+			<p id="popupMsg">Thank you! Your request has been submitted successfully.</p>
+			<button onclick="closeStatusPopup()">OK</button>
+		</div>
+
+
+		<div class="phone-tables-new">
+		
+			<table class="phone-table-new">
+				<thead>
+					<tr>
+						<th class="table-head">Number</th>
+						<th class="table-head">Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>0</td><td>Reception</td></tr>
+					<tr><td>298</td><td>Reception</td></tr>
+					<tr><td>299</td><td>Reception</td></tr>
+				</tbody>
+			</table>
+		
+
+			<table class="phone-table-new">
+				<thead>
+					<tr>
+						<th class="table-head">Number</th>
+						<th class="table-head">Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>100</td><td>Sample Name</td></tr>
+					<tr><td>101</td><td>Sample Name</td></tr>
+					<tr><td>102</td><td>Sample Name</td></tr>
+					<tr><td>103</td><td>Sample Name</td></tr>
+					<tr><td>104</td><td>Sample Name</td></tr>
+					<tr><td>105</td><td>Sample Name</td></tr>																		
+				</tbody>
+			</table>
+
+
+			<table class="phone-table-new">
+				<thead>
+					<tr>
+						<th class="table-head">Number</th>
+						<th class="table-head">Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>200</td><td>MED- Sample Name</td></tr>
+					<tr><td>201</td><td>MED- Sample Name</td></tr>
+					<tr><td>202</td><td>MED- Sample Name</td></tr>
+					<tr><td>203</td><td>MED- Sample Name</td></tr>
+					<tr><td>204</td><td>MED- Sample Name</td></tr>
+					<tr><td>205</td><td>MED- Sample Name</td></tr>
+					<tr><td>206</td><td>MED- Sample Name</td></tr>
+					<tr><td>207</td><td>MED- Sample Name</td></tr>
+					<tr><td>208</td><td>MED- Sample Name</td></tr>
+					<tr><td>209</td><td>MED- Sample Name</td></tr>
+				</tbody>
+			</table>
+				
+			
+			<table class="phone-table-new">
+				<thead>
+					<tr>
+						<th class="table-head">Number</th>
+						<th class="table-head">Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>300</td><td>Logistic- Sample Name</td></tr>
+					<tr><td>301</td><td>Logistic- Sample Name</td></tr>
+					<tr><td>302</td><td>Logistic- Sample Name</td></tr>
+					<tr><td>303</td><td>Logistic- Sample Name</td></tr>
+					<tr><td>304</td><td>Logistic- Sample Name</td></tr>
+					<tr><td>305</td><td>Logistic- Sample Name</td></tr>
+					<tr><td>306</td><td>Logistic- Sample Name</td></tr>
+					<tr><td>307</td><td>Logistic- Sample Name</td></tr>
+					<tr><td>308</td><td>Logistic- Sample Name</td></tr>
+					<tr><td>309</td><td>Logistic- Sample Name</td></tr>
+				</tbody>
+			</table>
+			
+			
+
+			<table class="phone-table-new">
+				<thead>
+					<tr>
+						<th class="table-head">Number</th>
+						<th class="table-head">Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>400</td><td>Finance- Sample Name</td></tr>
+					<tr><td>401</td><td>Finance- Sample Name</td></tr>
+					<tr><td>402</td><td>Finance- Sample Name</td></tr>
+					<tr><td>403</td><td>Finance- Sample Name</td></tr>
+					<tr><td>404</td><td>Finance- Sample Name</td></tr>
+					<tr><td>405</td><td>Finance- Sample Name</td></tr>
+					<tr><td>406</td><td>Finance- Sample Name</td></tr>
+					<tr><td>407</td><td>Finance- Sample Name</td></tr>
+					<tr><td>408</td><td>Finance- Sample Name</td></tr>
+					<tr><td>409</td><td>Finance- Sample Name</td></tr>
+					<tr><td>410</td><td>Finance- Sample Name</td></tr>
+					<tr><td>411</td><td>Finance- Sample Name</td></tr>
+					<tr><td>412</td><td>Finance- Sample Name</td></tr>
+					<tr><td>413</td><td>Finance- Sample Name</td></tr>
+				</tbody>
+			</table>
+						
+						
+			<table class="phone-table-new">
+				<thead>
+					<tr>
+						<th class="table-head">Number</th>
+						<th class="table-head">Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>500</td><td>ANA- Sample Name</td></tr>
+					<tr><td>501</td><td>ANA- Sample Name</td></tr>
+					<tr><td>502</td><td>ANA- Sample Name</td></tr>
+					<tr><td>503</td><td>ANA- Sample Name</td></tr>
+					<tr><td>504</td><td>ANA- Sample Name</td></tr>
+					<tr><td>505</td><td>ANA- Sample Name</td></tr>
+				</tbody>
+			</table>
+			
+			
+			<table class="phone-table-new">
+				<thead>
+					<tr>
+						<th class="table-head">Number</th>
+						<th class="table-head">Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>600</td><td>Admin- Sample Name</td></tr>
+					<tr><td>601</td><td>Admin- Sample Name</td></tr>
+					<tr><td>602</td><td>Admin- Sample Name</td></tr>
+					<tr><td>603</td><td>Admin- Sample Name</td></tr>
+					<tr><td>604</td><td>Admin- Sample Name</td></tr>
+					<tr><td>605</td><td>Admin- Sample Name</td></tr>
+					<tr><td>606</td><td>Admin- Sample Name</td></tr>
+					<tr><td>607</td><td>Admin- Sample Name</td></tr>
+					<tr><td>608</td><td>Admin- Sample Name</td></tr>
+					<tr><td>609</td><td>Admin- Sample Name</td></tr>
+					<tr><td>610</td><td>HR- Sample Name</td></tr>
+					<tr><td>611</td><td>HR- Sample Name</td></tr>
+					<tr><td>612</td><td>HR- Sample Name</td></tr>
+					<tr><td>613</td><td>HR- Sample Name</td></tr>
+				</tbody>
+			</table>			
+			
+			<table class="phone-table-new">
+				<thead>
+					<tr>
+						<th class="table-head">Number</th>
+						<th class="table-head">Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>700</td><td>Water- Sample Name</td></tr>
+					<tr><td>701</td><td>Water- Sample Name</td></tr>
+					<tr><td>702</td><td>Water- Sample Name</td></tr>
+					<tr><td>703</td><td>Water- Sample Name</td></tr>
+					<tr><td>704</td><td>Water- Sample Name</td></tr>
+					<tr><td>705</td><td>Water- Sample Name</td></tr>
+				</tbody>
+			</table>			
+			
+			<table class="phone-table-new">
+				<thead>
+					<tr>
+						<th class="table-head">Number</th>
+						<th class="table-head">Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>900</td><td>ASSD- Sample Name</td></tr>
+					<tr><td>901</td><td>ASSD- Sample Name</td></tr>
+					<tr><td>902</td><td>ASSD- Sample Name</td></tr>
+					<tr><td>903</td><td>ASSD- Sample Name</td></tr>
+					<tr><td>904</td><td>ASSD- Sample Name</td></tr>
+					<tr><td>905</td><td>ASSD- Sample Name</td></tr>
+					<tr><td>906</td><td>eHealthCare- Sample Name</td></tr>
+					<tr><td>907</td><td>eHealthCare- Sample Name</td></tr>
+				</tbody>
+			</table>			
+			
+						
+			<table class="phone-table-new">
+				<thead>
+					<tr>
+						<th class="table-head">Number</th>
+						<th class="table-head">Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>800</td><td>STORES- Sample Name</td></tr>
+					<tr><td>801</td><td>STORES- Sample Name</td></tr>
+					<tr><td>802</td><td>STORES- Sample Name</td></tr>
+					<tr><td>803</td><td>STORES- Sample Name</td></tr>
+					<tr><td>804</td><td>STORES- Sample Name</td></tr>
+					<tr><td>805</td><td>STORES- Sample Name</td></tr>
+					<tr><td>806</td><td>STORES- Sample Name</td></tr>
+					<tr><td>807</td><td>STORES- Sample Name</td></tr>
+					<tr><td>808</td><td>STORES- Sample Name</td></tr>
+					<tr><td>809</td><td>STORES- Sample Name</td></tr>
+				</tbody>
+			</table>			
+			
+			
+			
+		</div>
+	</div>
+	  
+	  
+	 
+    </section>
+	
+  </main>
+  
+  
+  <footer>
+    &copy; Nadeera Sampath Wijekoon 2025
+  </footer>
+  
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

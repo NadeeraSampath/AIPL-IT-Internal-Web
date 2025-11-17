@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AIPL Printers</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-printers.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script defer src="script-printers.js"></script>
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="logo"><a href="index.html">
+      <img src="Photos\logo.png" alt="Logo" /></a>
+    </div>
+    <div class="title">IT Division - Analytical Instruments (Pvt) Ltd</div>
+    <div class="home-icon">
+      <a href="index.html">
+		<i class="fas fa-home"></i> HOME
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <aside class="icon-panel">
+      <div class="icon-item">
+		<a href="printers.html">
+			<img src="Photos\printers.png" alt="Printers" />
+			<p>Network Printers</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="mobiles.html">
+			<img src="Photos\mobille.png" alt="Extentions" />
+			<p>Mobile Numbers</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="extentions.html">
+			<img src="Photos\extentions.png" alt="Extentions" />
+			<p>Phone Extentions</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="Res/request_projector.docx" download>
+			<img src="Photos\projector.png" alt="Projector" />
+			<p>Request Projector</p>
+		</a>
+      </div>
+    <div class="icon-item">
+		<a href="http://192.168.001.001:0001" target="_blank">
+			<img src="Photos\horion-ipp.png" alt="Horion-IPP" />
+			<p>TV - Board Meeting Room</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="tutorials.html">
+			<img src="Photos\tutorials.png" alt="Tutorials" />
+			<p>How To Do</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="documents.html">
+			<img src="Photos\documents.png" alt="Documents" />
+			<p>Documents</p>
+		</a>
+      </div>
+	  <div class="icon-item">
+		<a href="information.html">
+			<img src="Photos\information.png" alt="Information" />
+			<p>Information</p>
+		</a>
+      </div>	  
+    </aside>
+
+    <section class="content">
+	
+	<div class="printers-table">
+	<h2>Network Printers</h2>
+	<table>
+		<thead>
+		  <tr>
+			<th class="table-head">Floor</th>
+			<th class="table-head">Location</th>
+			<th class="table-head">Model</th>
+			<th class="table-head">Functions</th>
+			<th class="table-head">IP Address</th>
+			<th class="table-head-last">Copy IP</th>
+			<th class="table-head-last">Open</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr class="gr-floor"><td>Ground</td><td>SCMT-Import</td><td>HP LaserJet M401</td><td>Print B&amp;W</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="gr-floor"><td>Ground</td><td>SCMT-Import</td><td>Brother MFC-L2715DW</td><td>Print/Scan/Copy/ADF</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="fi-floor"><td>1st</td><td>Medical (Color)</td><td>EPSON L6490 Series</td><td>Color Print</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="fi-floor"><td>1st</td><td>HR Printer</td><td>Brother MFC-L2715DW</td><td>Print/Scan/Copy/ADF</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="fi-floor"><td>1st</td><td>SOMT Printer</td><td>HP LaserJet M401dn</td><td>Print B&amp;W</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="fi-floor"><td>1st</td><td>Medical Printer</td><td>HP LaserJet M401dn</td><td>Print B&amp;W</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="fi-floor"><td>1st</td><td>SOMT (Photocopy)</td><td>RICOH MP 3555</td><td>Photocopier</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="se-floor"><td>2nd</td><td>Finance Printer</td><td>Brother MFC-L2715DW</td><td>Print/Scan/Copy/ADF</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="se-floor"><td>2nd</td><td>Finance Printer</td><td>HP LaserJet M401dn</td><td>Print B&amp;W</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="th-floor"><td>3rd</td><td>Ana Printer</td><td>HP LaserJet P3015</td><td>Print B&amp;W</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="th-floor"><td>3rd</td><td>Ana (Photocopy)</td><td>RICOH MP 2501</td><td>Photocopier</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="th-floor"><td>3rd</td><td>Ana Printer</td><td>HP LaserJet M401dn</td><td>Print B&amp;W</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="th-floor"><td>3rd</td><td>Ana (Color)</td><td>HP Smart Tank 750</td><td>Color Print</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="th-floor"><td>3rd</td><td>HR Printer</td><td>HP LaserJet Pro M404dn</td><td>Print B&amp;W</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="fo-floor"><td>4th</td><td>ASSD Printer</td><td>HP LaserJet M401dn</td><td>Print B&amp;W</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="fo-floor"><td>4th</td><td>E-Healthcare Printer</td><td>HP LaserJet M401dn</td><td>Print B&amp;W</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="st-floor"><td>Stores</td><td>STORES Printer</td><td>HP LaserJet M401dn</td><td>Print B&amp;W</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="st-floor"><td>Stores</td><td>MED-Workshop Printer</td><td>HP LaserJet M401dn</td><td>Print B&amp;W</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="st-floor"><td>Stores</td><td>WH-Invoice Counter</td><td>HP LaserJet M401dn</td><td>Print B&amp;W</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		  <tr class="st-floor"><td>Stores</td><td>STORES (Photocopy)</td><td>SHARP BP-20M22</td><td>Photocopier</td><td class="ip">192.168.001.001</td><td class="td-last"><button onclick="copyIP(this)">📋</button></td><td class="td-last"><a href="http://192.168.001.001" target="_blank">🔗</a></td></tr>
+		</tbody>
+	</table>
+	</div>
+
+	<h2>Drivers Paths of the Printers</h2>
+	
+	<div class="printer-card-container">
+	  <div class="printer-card">
+		<img src="photos/401.png" alt="401" class="printer-img">
+		<p>HP LaserJet 400 M401</p>
+		<button data-path="\\192.168.001.001\Drivers\Printers\HP\LJ PRO 400DN\Win 10\LJ-M401-full-solution-15188" onclick="copyPath(this.dataset.path, this)">Copy Path</button>
+	  </div>
+	  <div class="printer-card">
+		<img src="photos/404.png" alt="404" class="printer-img">
+		<p>HP LaserJet Pro M404dn</p>
+		<button data-path="\\192.168.001.001\Drivers\Printers\HP\HP_LJM404-M405_Driver\HP_LJM404-M405_V3" onclick="copyPath(this.dataset.path, this)">Copy Path</button>
+	  </div>
+	  <div class="printer-card">
+		<img src="photos/750.png" alt="750" class="printer-img">
+		<p>HP Smart Tank 750 series</p>
+		<button data-path="\\192.168.001.001\Drivers\Printers\HP\HP Ink Tank 750 - Color\Driver" onclick="copyPath(this.dataset.path, this)">Copy Path</button>
+	  </div>
+	  <div class="printer-card">
+		<img src="photos/2715.png" alt="2715" class="printer-img">
+		<p>Brother MFC-L2715DW</p>
+		<button data-path="\\192.168.001.001\Drivers\Printers\Brother\Brother 2715DW\setup inf file" onclick="copyPath(this.dataset.path, this)">Copy Path</button>
+	  </div>
+	  <div class="printer-card">
+		<img src="photos/3015.png" alt="3015" class="printer-img">
+		<p>HP LaserJet P3015 printer</p>
+		<button data-path="\\192.168.001.001\Drivers\Printers\HP\HP p3015\upd-pcl6-x64-6.5.0.22695" onclick="copyPath(this.dataset.path, this)">Copy Path</button>
+	  </div>
+	  <div class="printer-card">
+		<img src="photos/6490.png" alt="6490" class="printer-img">
+		<p>EPSON L6490 Series</p>
+		<button data-path="\\192.168.001.001\Drivers\Printers\Epson\L655_x64_242JAUsHomeExportAsiaML\WINX64" onclick="copyPath(this.dataset.path, this)">Copy Path</button>
+	  </div>
+	  <div class="printer-card">
+		<img src="photos/3555.png" alt="3555" class="printer-img">
+		<p>RICOH MP 3555 Photocopier</p>
+		<button data-path="\\192.168.001.001\Drivers\Photo copy\Ricoh 3555\disk1" onclick="copyPath(this.dataset.path, this)">Copy Path</button>
+	  </div>
+	  <div class="printer-card">
+		<img src="photos/2501.png" alt="2501" class="printer-img">
+		<p>RICOH MP 2501 Photocopier</p>
+		<button data-path="\\192.168.001.001\Drivers\Photo copy\RICOH Printer Driver\PCL 6 Popup Driver\64bit\disk1" onclick="copyPath(this.dataset.path, this)">Copy Path</button>
+	  </div>
+
+	</div>
+
+
+
+    </section>
+  </main>
+  
+  
+  <footer>
+    &copy; Nadeera Sampath Wijekoon 2025
+  </footer>
+  
+</div>
+</body>
+</html>
